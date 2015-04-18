@@ -74,7 +74,7 @@ public class KafkaProducer extends Thread{
 		String email = dbModObject.get("email").toString();
 		
 		String msg = email + ":009982986:Poll Result [" + firstChoice + "=" + firstOption + "," + secondChoice  + "=" + secondOption + "]";
-        System.out.println(msg);
+        //System.out.println(msg);
         
         KeyedMessage<String, String> message =new KeyedMessage<String, String>(topic,msg);
 	    producer.send(message);
