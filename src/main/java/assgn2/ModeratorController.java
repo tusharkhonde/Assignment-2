@@ -1,38 +1,26 @@
 package assgn2;
 
-import assgn2.Moderator;
-import assgn2.Poll;
-
-import java.io.StringReader;
 import java.net.UnknownHostException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.OptionalLong;
-import java.util.Random;
-import java.util.Set;
-import java.util.stream.LongStream;
 
 import javax.validation.Valid;
 
-import jdk.nashorn.internal.parser.JSONParser;
-
-import org.apache.catalina.connector.Response;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.json.JsonParser;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PostFilter;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
@@ -43,13 +31,18 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 
-
+import assgn2.KafkaProducer;
 
 @Controller
 @RestController
 public class ModeratorController {
-	
-   /* Moderator */
+
+	  @Scheduled(fixedRate = 500000)
+       public void Moderator() throws UnknownHostException, ParseException{
+	   KafkaProducer kfp = new KafkaProducer();
+       kfp.MessageProducer();
+   }
+	/* Moderator */
 	
 /* Create a new Moderator */
 	
@@ -60,7 +53,7 @@ public class ModeratorController {
        
 				
 		Date date = new Date();
-		SimpleDateFormat date_format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+		SimpleDateFormat date_format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 		String created_at= date_format.format(date);
 		
 		String moderator_id=null; 	
@@ -75,7 +68,7 @@ public class ModeratorController {
 //	        BasicDBObject query = new BasicDBObject();
 //	        BasicDBObject fields = new BasicDBObject("id",1).append("_id", 0);
 //	        String dbObj = mod.findOne(query,fields).get("id").toString(); 
-	       
+	      
 	        DBCursor myCursor=mod.find().sort(new BasicDBObject("id",-1)).limit(1);
 	        BasicDBObject dbObject = (BasicDBObject)myCursor.next();
 	        String modid = dbObject.getString("id");
