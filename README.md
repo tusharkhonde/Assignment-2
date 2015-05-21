@@ -1,10 +1,10 @@
-# CMPE 273- Assignment 1
+# CMPE 273- Assignment 2
 
 Building a Web Voting application similar to the SMS Voting.
 
 Application support JSON data format for the API. The API version for this assignment is “v1”, and the application server must be running on the default port 8080.
 
-There is no data persistent required for the wallet, but to store the data in an in-memory data structure like HashMap/ArrayList.
+There is persistent data required for the wallet, using MongoDB NoSQL database.
 
 ##  APIs 
 
