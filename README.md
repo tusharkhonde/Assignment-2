@@ -18,9 +18,9 @@ These are the set of APIs you need to build for the system.
 		* HTTP Headers: Content-type: application/json
 		
                     {
-                    "name": "John Smith",
- 		    "email": "John.Smith@Gmail.com",
- 		    "password": "secret"
+                     "name": "John Smith",
+ 		     "email": "John.Smith@Gmail.com",
+ 		     "password": "secret"
 	            }
         * Response: HTTP Code: 201
         
