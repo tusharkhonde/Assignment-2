@@ -117,7 +117,7 @@ These are the set of APIs you need to build for the system.
     * Resource: /moderators/{moderator_id}/polls/{poll_id}
     * Description: View a poll with current result.
     * Request:  GET /moderators/12345/polls/1ADC2FZ
-              * HTTP Headers:Content-type: application/json
+        * HTTP Headers:Content-type: application/json
                     
                     {
                     "id" : "1ADC2FZ",
@@ -132,10 +132,10 @@ These are the set of APIs you need to build for the system.
     * Resource: /moderators/{moderator_id}/polls
     * Description: List all polls created by the given moderator.
     * Request: GET /moderators/12345/polls
-            * HTTP Headers:Accept-type: application/json
-            * Response: HTTP Code: 200
+        * HTTP Headers:Accept-type: application/json
+        * Response: HTTP Code: 200
                     
-		    [
+		        [
                     {
                     "id" : "1ADC2FZ",
                     "question": "What type of smartphone do you have?",
@@ -166,8 +166,8 @@ These are the set of APIs you need to build for the system.
     * Resource: /polls/{poll_id}?choice={choice_index}
     * Description: Vote a poll
     * Request: 
-            * User's choice for the poll was "Yes" which is index 0.
-            * PUT /polls/2BZE91C?choice=0     
+        * User's choice for the poll was "Yes" which is index 0.
+        * PUT /polls/2BZE91C?choice=0     
     * Response:HTTP Code: 204
 
 * How to test APIs?
