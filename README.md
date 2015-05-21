@@ -22,6 +22,7 @@ These are the set of APIs you need to build for the system.
  		     "email": "John.Smith@Gmail.com",
  		     "password": "secret"
 	            }
+
         * Response: HTTP Code: 201
         
                     {
