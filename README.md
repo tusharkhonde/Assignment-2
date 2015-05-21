@@ -1,4 +1,4 @@
-## CMPE 273- Assignment 1
+# CMPE 273- Assignment 1
 
 Building a Web Voting application similar to the SMS Voting.
 
@@ -16,19 +16,19 @@ These are the set of APIs you need to build for the system.
     * Description: Add a moderator to the system.
     * Request: POST /moderators (with the following payload in the request body)
 		* HTTP Headers: Content-type: application/json
-                {
-                "name": "John Smith",
- 				"email": "John.Smith@Gmail.com",
- 				"password": "secret"
-	            }
+                    {
+                    "name": "John Smith",
+ 				    "email": "John.Smith@Gmail.com",
+ 				    "password": "secret"
+	                }
         * Response: HTTP Code: 201
-                {
-                "id" : "123456",
-                "name": "John Smith",
-                "email": "John.Smith@Gmail.com",
-                "password": "secret",
-                "created_at" : "2014-09-16T13:28:06.419Z"
-                }
+                    {
+                    "id" : "123456",
+                    "name": "John Smith",
+                    "email": "John.Smith@Gmail.com",
+                    "password": "secret",
+                    "created_at" : "2014-09-16T13:28:06.419Z"
+                    }
 * View Moderator
    * Resource: /moderators/{moderator_id}
    * Description: View a moderator resource
@@ -36,13 +36,13 @@ These are the set of APIs you need to build for the system.
         * GET /moderators/123456
         * Accept: application/json
         * Response: HTTP Code: 200
-                {
-                "id" : "123456",
-                "name": "John Smith",
-                "email": "John.Smith@Gmail.com",
-                "password": "secret",
-                "created_at" : "2014-09-16T13:28:06.419Z"
-                 }
+                    {
+                    "id" : "123456",
+                    "name": "John Smith",
+                    "email": "John.Smith@Gmail.com",
+                    "password": "secret",
+                    "created_at" : "2014-09-16T13:28:06.419Z"
+                    }
 
 * Update Moderator
 
@@ -52,15 +52,19 @@ These are the set of APIs you need to build for the system.
         * PUT /moderators/123456 (with the following payload in the                       request body)
         * HTTP Headers:
         * Content-type: application/json
-                    {"email": "John.Smith2@Gmail.com",
-                    "password": "newsecret"}
+                    {
+                    "email": "John.Smith2@Gmail.com",
+                    "password": "newsecret"
+                    }
             
     * Response: HTTP Code: 200
-                   { "id" : "123456",
+                    { 
+                    "id" : "123456",
                     "name": "John Smith",
                     "email": "John.Smith2@Gmail.com",
                     "password": "newsecret",
-                    "created_at" : "2014-09-16T13:28:06.419Z" }
+                    "created_at" : "2014-09-16T13:28:06.419Z"
+                    }
             
 * Create a Poll
 
@@ -78,26 +82,26 @@ These are the set of APIs you need to build for the system.
                     }
     * Response:
         * HTTP Code: 201
-                {
-                "id" : "1ADC2FZ",   
-                "question": "What type of smartphone do you have?",
-                "started_at": "2015-02-23T13:00:00.000Z",
-                "expired_at" : "2015-02-24T13:00:00.000Z",
-                "choice": [ "Android", "iPhone" ]
-                }
+                    {
+                    "id" : "1ADC2FZ",   
+                    "question": "What type of smartphone do you have?",
+                    "started_at": "2015-02-23T13:00:00.000Z",
+                    "expired_at" : "2015-02-24T13:00:00.000Z",
+                    "choice": [ "Android", "iPhone" ]
+                    }
            
 * View a Poll Without Result
     * Resource: /polls/{poll_id}
     * Description: View a poll.
     * Request: GET /polls/1ADC2FZ
         * HTTP Headers: Content-type: application/json
-                {
-                "id" : "1ADC2FZ",
-                "question": "What type of smartphone do you have?",
-                "started_at": "2015-02-23T13:00:00.000Z",
-                "expired_at" : "2015-02-24T13:00:00.000Z",
-                "choice": [ "Android", "iPhone" ]
-                }
+                    {
+                    "id" : "1ADC2FZ",
+                    "question": "What type of smartphone do you have?",
+                    "started_at": "2015-02-23T13:00:00.000Z",
+                    "expired_at" : "2015-02-24T13:00:00.000Z",
+                    "choice": [ "Android", "iPhone" ]
+                    }
 
 * View a Poll With Result
 
@@ -105,14 +109,14 @@ These are the set of APIs you need to build for the system.
     * Description: View a poll with current result.
     * Request:  GET /moderators/12345/polls/1ADC2FZ
             * HTTP Headers:Content-type: application/json
-                {
-                "id" : "1ADC2FZ",
-                "question": "What type of smartphone do you have?",
-                "started_at": "2015-02-23T13:00:00.000Z",
-                "expired_at" : "2015-02-24T13:00:00.000Z",
-                "choice": [ "Android", "iPhone" ],
-                "results": [ 500, 600 ]
-                }
+                    {
+                    "id" : "1ADC2FZ",
+                    "question": "What type of smartphone do you have?",
+                    "started_at": "2015-02-23T13:00:00.000Z",
+                    "expired_at" : "2015-02-24T13:00:00.000Z",
+                    "choice": [ "Android", "iPhone" ],
+                    "results": [ 500, 600 ]
+                    }
 
 * List All Polls
     * Resource: /moderators/{moderator_id}/polls
@@ -120,7 +124,7 @@ These are the set of APIs you need to build for the system.
     * Request: GET /moderators/12345/polls
             * HTTP Headers:Accept-type: application/json
             * Response: HTTP Code: 200
-                [
+                    [
                     {
                     "id" : "1ADC2FZ",
                     "question": "What type of smartphone do you have?",
@@ -137,7 +141,7 @@ These are the set of APIs you need to build for the system.
                     "choice": [ "Yes", "No" ],
                     "results": [ 30, 70 ]
                     }
-                ]
+                    ]
             
 *  Delete a Poll
 
