@@ -16,12 +16,14 @@ These are the set of APIs you need to build for the system.
     * Description: Add a moderator to the system.
     * Request: POST /moderators (with the following payload in the request body)
 		* HTTP Headers: Content-type: application/json
+		
                     {
                     "name": "John Smith",
- 				    "email": "John.Smith@Gmail.com",
- 				    "password": "secret"
-	                }
+ 		    "email": "John.Smith@Gmail.com",
+ 		    "password": "secret"
+	            }
         * Response: HTTP Code: 201
+        
                     {
                     "id" : "123456",
                     "name": "John Smith",
@@ -36,6 +38,7 @@ These are the set of APIs you need to build for the system.
         * GET /moderators/123456
         * Accept: application/json
         * Response: HTTP Code: 200
+        
                     {
                     "id" : "123456",
                     "name": "John Smith",
@@ -52,12 +55,14 @@ These are the set of APIs you need to build for the system.
         * PUT /moderators/123456 (with the following payload in the                       request body)
         * HTTP Headers:
         * Content-type: application/json
+        
                     {
                     "email": "John.Smith2@Gmail.com",
                     "password": "newsecret"
                     }
             
     * Response: HTTP Code: 200
+    
                     { 
                     "id" : "123456",
                     "name": "John Smith",
@@ -82,6 +87,7 @@ These are the set of APIs you need to build for the system.
                     }
     * Response:
         * HTTP Code: 201
+        
                     {
                     "id" : "1ADC2FZ",   
                     "question": "What type of smartphone do you have?",
@@ -95,7 +101,8 @@ These are the set of APIs you need to build for the system.
     * Description: View a poll.
     * Request: GET /polls/1ADC2FZ
         * HTTP Headers: Content-type: application/json
-                    {
+                    
+		    {
                     "id" : "1ADC2FZ",
                     "question": "What type of smartphone do you have?",
                     "started_at": "2015-02-23T13:00:00.000Z",
@@ -109,6 +116,7 @@ These are the set of APIs you need to build for the system.
     * Description: View a poll with current result.
     * Request:  GET /moderators/12345/polls/1ADC2FZ
             * HTTP Headers:Content-type: application/json
+                    
                     {
                     "id" : "1ADC2FZ",
                     "question": "What type of smartphone do you have?",
@@ -124,7 +132,8 @@ These are the set of APIs you need to build for the system.
     * Request: GET /moderators/12345/polls
             * HTTP Headers:Accept-type: application/json
             * Response: HTTP Code: 200
-                    [
+                    
+		    [
                     {
                     "id" : "1ADC2FZ",
                     "question": "What type of smartphone do you have?",
