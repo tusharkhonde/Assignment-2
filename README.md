@@ -19,9 +19,9 @@ These are the set of APIs you need to build for the system.
 		
                     {
                      "name": "John Smith",
- 		     "email": "John.Smith@Gmail.com",
- 		     "password": "secret"
-	            }
+	 		         "email": "John.Smith@Gmail.com",
+		 		     "password": "secret"
+		            }
 
         * Response: HTTP Code: 201
         
@@ -86,6 +86,7 @@ These are the set of APIs you need to build for the system.
                     "expired_at" : "2015-02-24T13:00:00.000Z",
                     "choice": [ "Android", "iPhone" ]
                     }
+                    
     * Response:
         * HTTP Code: 201
         
@@ -103,7 +104,7 @@ These are the set of APIs you need to build for the system.
     * Request: GET /polls/1ADC2FZ
         * HTTP Headers: Content-type: application/json
                     
-		    {
+				    {
                     "id" : "1ADC2FZ",
                     "question": "What type of smartphone do you have?",
                     "started_at": "2015-02-23T13:00:00.000Z",
@@ -116,7 +117,7 @@ These are the set of APIs you need to build for the system.
     * Resource: /moderators/{moderator_id}/polls/{poll_id}
     * Description: View a poll with current result.
     * Request:  GET /moderators/12345/polls/1ADC2FZ
-            * HTTP Headers:Content-type: application/json
+              * HTTP Headers:Content-type: application/json
                     
                     {
                     "id" : "1ADC2FZ",
@@ -151,7 +152,7 @@ These are the set of APIs you need to build for the system.
                     "choice": [ "Yes", "No" ],
                     "results": [ 30, 70 ]
                     }
-                    ]
+                 ]
             
 *  Delete a Poll
 
@@ -172,4 +173,3 @@ These are the set of APIs you need to build for the system.
 * How to test APIs?
 
     * You can use either curl command line tool. or GUI tools like Postman or        Advanced REST client Chrome plugin.
- 
