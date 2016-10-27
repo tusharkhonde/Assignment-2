@@ -1,4 +1,4 @@
-# CMPE 273- Assignment 2
+# Poll Moderator - SpringBoot
 
 Building a Web Voting application similar to the SMS Voting.
 
